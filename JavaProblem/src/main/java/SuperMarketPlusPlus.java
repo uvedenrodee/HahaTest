@@ -1,8 +1,13 @@
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class SuperMarketPlusPlus {
+	
+	
 
 	private static List<Item> items = null;
 
@@ -20,8 +25,20 @@ public class SuperMarketPlusPlus {
         items.add(new Item("Sulfuras", 0, 80));
         items.add(new Item("Backstage Passes", 15, 20));
         items.add(new Item("Ginger Cake", 3, 6));
+        items.add(new Item("Organic Bananas", 2, 40));
 
-        updateQuality();
+        Timer timer = new Timer();
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.HOUR, 0);
+        date.set(Calendar.MINUTE, 0);
+        date.set(Calendar.SECOND, 0);
+        date.set(Calendar.MILLISECOND, 0);
+        // Schedule to run every day at midnight
+        timer.schedule(
+          new NightlyChanges(),
+          date.getTime(),
+          1000 * 60 * 60 * 24
+        );
 }
 
 
@@ -91,7 +108,6 @@ public class SuperMarketPlusPlus {
                             {
                             	if ("Organic Bananas".equals(items.get(i).getName()))
                                 {
-                            		//I think here should be -4, but the other items decrement only with -1
                                     items.get(i).setQuality(items.get(i).getQuality() - 2);
                                 }
                             	else
