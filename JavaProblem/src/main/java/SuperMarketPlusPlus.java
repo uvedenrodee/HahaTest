@@ -36,7 +36,14 @@ public class SuperMarketPlusPlus {
                 {
                     if (!"Sulfuras".equals(items.get(i).getName()))
                     {
-                        items.get(i).setQuality(items.get(i).getQuality() - 1);
+                    	if ("Organic Bananas".equals(items.get(i).getName()))
+                        {
+                            items.get(i).setQuality(items.get(i).getQuality() - 2);
+                        }
+                    	else
+                    	{
+                    		items.get(i).setQuality(items.get(i).getQuality() - 1);
+                    	}
                     }
                 }
             }
@@ -82,7 +89,15 @@ public class SuperMarketPlusPlus {
                         {
                             if (!"Sulfuras".equals(items.get(i).getName()))
                             {
-                                items.get(i).setQuality(items.get(i).getQuality() - 1);
+                            	if ("Organic Bananas".equals(items.get(i).getName()))
+                                {
+                            		//I think here should be -4, but the other items decrement only with -1
+                                    items.get(i).setQuality(items.get(i).getQuality() - 2);
+                                }
+                            	else
+                            	{
+                            		items.get(i).setQuality(items.get(i).getQuality() - 1);
+                            	}
                             }
                         }
                     }
