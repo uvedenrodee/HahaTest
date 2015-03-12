@@ -6,6 +6,7 @@ import java.util.Timer;
 
 import com.pirean.model.Item;
 import com.pirean.task.NightlyTask;
+import com.pirean.util.ItemName;
 
 
 public class SuperMarketPlusPlus {
@@ -20,13 +21,13 @@ public class SuperMarketPlusPlus {
         System.out.println("Starting Supermarket Plus Plus");
 		
         items = new ArrayList<Item>();
-        items.add(new Item("Thermal Vest", 10, 20));
-        items.add(new Item("Aged Brie", 2, 0));
-        items.add(new Item("Chicken", 5, 7));
-        items.add(new Item("Sulfuras", 0, 80));
-        items.add(new Item("Backstage Passes", 15, 20));
-        items.add(new Item("Ginger Cake", 3, 6));
-        items.add(new Item("Organic Bananas", 2, 40));
+        items.add(new Item(ItemName.THERMAL_VEST.getValue(), 10, 20));
+        items.add(new Item(ItemName.AGED_BRIE.getValue(), 2, 0));
+        items.add(new Item(ItemName.CHICKEN.getValue(), 5, 7));
+        items.add(new Item(ItemName.SULFURAS.getValue(), 0, 80));
+        items.add(new Item(ItemName.BACKSTAGE_PASSES.getValue(), 15, 20));
+        items.add(new Item(ItemName.GINGER_CAKE.getValue(), 3, 6));
+        items.add(new Item(ItemName.ORGANIC_BANANAS.getValue(), 2, 40));
 
         Timer timer = new Timer();
         Calendar date = Calendar.getInstance();
