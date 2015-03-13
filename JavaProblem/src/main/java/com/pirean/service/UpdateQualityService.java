@@ -10,21 +10,18 @@ public class UpdateQualityService {
     {
         for (int i = 0; i < items.size(); i++)
         {
-            if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage Passes".equals(items.get(i).getName())) 
+            if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage Passes".equals(items.get(i).getName()) && !"Sulfuras".equals(items.get(i).getName())) 
             {
                 if (items.get(i).getQuality() > 0)
                 {
-                    if (!"Sulfuras".equals(items.get(i).getName()))
+                	if ("Organic Bananas".equals(items.get(i).getName()))
                     {
-                    	if ("Organic Bananas".equals(items.get(i).getName()))
-                        {
-                            items.get(i).setQuality(items.get(i).getQuality() - 2);
-                        }
-                    	else
-                    	{
-                    		items.get(i).setQuality(items.get(i).getQuality() - 1);
-                    	}
+                        items.get(i).setQuality(items.get(i).getQuality() - 2);
                     }
+                	else
+                	{
+                		items.get(i).setQuality(items.get(i).getQuality() - 1);
+                	}
                 }
             }
             else
@@ -37,18 +34,12 @@ public class UpdateQualityService {
                     {
                         if (items.get(i).getSellIn() < 11)
                         {
-                            if (items.get(i).getQuality() < 50)
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() + 1);
-                            }
+                            items.get(i).setQuality(items.get(i).getQuality() + 1);
                         }
 
                         if (items.get(i).getSellIn() < 6)
                         {
-                            if (items.get(i).getQuality() < 50)
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() + 1);
-                            }
+                            items.get(i).setQuality(items.get(i).getQuality() + 1);
                         }
                     }
                 }
