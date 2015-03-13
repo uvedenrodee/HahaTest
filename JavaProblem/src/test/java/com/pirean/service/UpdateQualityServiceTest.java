@@ -91,4 +91,19 @@ public class UpdateQualityServiceTest {
         
         assertTrue(items.get(0).getQuality() == 36);
 	}
+	
+	@Test
+	public void testQualityNotBiggerThen50() {
+		List<Item> items = new ArrayList<Item>();
+        items.add(new Item(ItemName.AGED_BRIE.getValue(), 0, 50));
+        items.add(new Item(ItemName.BACKSTAGE_PASSES.getValue(), 11, 50));
+        
+        UpdateQualityService.updateQuality(items);
+        
+        assertTrue(items.get(0).getQuality() == 50);
+        assertTrue(items.get(1).getQuality() == 50);
+        
+	}
+	
+	
 }
