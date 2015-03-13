@@ -8,3 +8,6 @@
 
 5. Reduced the numbers of if's from the updateQuality method. One can also consider using a switch statement, but I prefer the if's.
 
+6. I should have changed the acces modifier for the attributes of the Item class, but since I can't touch that class, I didn't (maybe I shouldn't have moved it from the default.package?).
+
+
