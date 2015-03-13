@@ -3,6 +3,7 @@ package com.pirean.service;
 import java.util.List;
 
 import com.pirean.model.Item;
+import com.pirean.util.ItemName;
 
 public class UpdateQualityService {
 	
@@ -10,11 +11,11 @@ public class UpdateQualityService {
     {
         for (int i = 0; i < items.size(); i++)
         {
-            if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage Passes".equals(items.get(i).getName()) && !"Sulfuras".equals(items.get(i).getName())) 
+            if ((!ItemName.AGED_BRIE.getValue().equals(items.get(i).getName())) && !ItemName.BACKSTAGE_PASSES.getValue().equals(items.get(i).getName()) && !ItemName.SULFURAS.getValue().equals(items.get(i).getName())) 
             {
                 if (items.get(i).getQuality() > 0)
                 {
-                	if ("Organic Bananas".equals(items.get(i).getName()))
+                	if (ItemName.ORGANIC_BANANAS.getValue().equals(items.get(i).getName()))
                     {
                         items.get(i).setQuality(items.get(i).getQuality() - 2);
                     }
@@ -30,7 +31,7 @@ public class UpdateQualityService {
                 {
                     items.get(i).setQuality(items.get(i).getQuality() + 1);
 
-                    if ("Backstage Passes".equals(items.get(i).getName()))
+                    if (ItemName.BACKSTAGE_PASSES.getValue().equals(items.get(i).getName()))
                     {
                         if (items.get(i).getSellIn() < 11)
                         {
@@ -45,22 +46,22 @@ public class UpdateQualityService {
                 }
             }
 
-            if (!"Sulfuras".equals(items.get(i).getName()))
+            if (!ItemName.SULFURAS.getValue().equals(items.get(i).getName()))
             {
                 items.get(i).setSellIn(items.get(i).getSellIn() - 1);
             }
 
             if (items.get(i).getSellIn() < 0)
             {
-                if (!"Aged Brie".equals(items.get(i).getName()))
+                if (!ItemName.AGED_BRIE.getValue().equals(items.get(i).getName()))
                 {
-                    if (!"Backstage Passes".equals(items.get(i).getName()))
+                    if (!ItemName.BACKSTAGE_PASSES.getValue().equals(items.get(i).getName()))
                     {
                         if (items.get(i).getQuality() > 0)
                         {
-                            if (!"Sulfuras".equals(items.get(i).getName()))
+                            if (!ItemName.SULFURAS.getValue().equals(items.get(i).getName()))
                             {
-                            	if ("Organic Bananas".equals(items.get(i).getName()))
+                            	if (ItemName.ORGANIC_BANANAS.getValue().equals(items.get(i).getName()))
                                 {
                                     items.get(i).setQuality(items.get(i).getQuality() - 2);
                                 }
